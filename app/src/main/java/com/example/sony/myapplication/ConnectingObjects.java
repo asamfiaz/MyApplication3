@@ -10,19 +10,23 @@ import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
-public class objects_connecting extends AppCompatActivity {
+public class ConnectingObjects extends AppCompatActivity {
 
     private ImageView img;
     private ViewGroup rootLayout;
     private int _xDelta;
     private int _yDelta;
+    // movement of start event
+    private TextView textView3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.connecting_objects2);
+        setContentView(R.layout.objects_connecting);
         rootLayout = (ViewGroup) findViewById(R.id.view_root);
 
         Button advanceToDropDown = (Button) findViewById(R.id.BackButtonConnecting);
@@ -30,13 +34,13 @@ public class objects_connecting extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(objects_connecting.this, MainActivity.class);
+                Intent intent = new Intent(ConnectingObjects.this, MainActivity.class);
                 startActivity(intent);
             }
         });
 
         img = (ImageView) rootLayout.findViewById(R.id.startEvent);
-
+        textView3 = (TextView) findViewById(R.id.textView3);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150, 150);
         img.setLayoutParams(layoutParams);
         img.setOnTouchListener(new ChoiceTouchListener());
@@ -68,6 +72,7 @@ public class objects_connecting extends AppCompatActivity {
                     view.setLayoutParams(layoutParams);
                     break;
             }
+            textView3.setText("X: " + X + " Y: " + Y);
             rootLayout.invalidate();
             return true;
         }
@@ -83,4 +88,4 @@ public class objects_connecting extends AppCompatActivity {
 
 
 
-} // public class objects_connecting
+} // public class Connectingobjects
