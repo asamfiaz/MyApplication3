@@ -22,66 +22,53 @@
         android:id="@+id/BeginButtonMain"
         tools:ignore="HardcodedText" />
 
+    <TextView
+        android:text="Welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvWelcomeMsg"
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
         android:layout_above="@+id/BeginButtonMain"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="167dp" />
+        android:layout_marginBottom="14dp" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/tvWelcomeMsg"
-        android:layout_alignParentEnd="true"
-        android:textStyle="normal|bold"
-        android:textSize="24sp"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:text="Company Name"
+        android:text="Company Name - Not registered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
+        tools:ignore="HardcodedText"
         android:layout_below="@+id/tvWelcomeMsg"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp"
-        tools:ignore="HardcodedText" />
+        android:layout_marginTop="31dp" />
 
     <TextView
-        android:text="UserName"
+        android:text="UserName - Not registered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etCompanyName"
-        android:layout_alignParentStart="true"
         android:id="@+id/textView4"
-        tools:ignore="HardcodedText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/etCompanyName"
+        tools:ignore="HardcodedText"
         android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true"
-        tools:ignore="HardcodedText" />
+        android:layout_marginTop="24dp" />
 
-    <EditText
+    <TextView
+        android:text="Please select number of swim lanes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_below="@+id/textView4"
-        android:layout_alignEnd="@+id/etCompanyName"
-        android:layout_marginTop="11dp"
-        android:id="@+id/etUserName"
+        android:id="@+id/textView"
+        android:layout_above="@+id/spinner"
+        android:layout_toStartOf="@+id/BeginButtonMain"
+        android:layout_marginBottom="26dp"
         tools:ignore="HardcodedText" />
 
 

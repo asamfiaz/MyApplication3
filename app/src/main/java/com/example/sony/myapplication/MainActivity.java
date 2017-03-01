@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, objects_connecting.class);
+                Intent intent = new Intent(MainActivity.this, ConnectingObjects.class);
                 startActivity(intent);
             }
         });
@@ -50,8 +50,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        TextView myText = (TextView) view;
-        Toast.makeText(this, "You Selected "+ myText.getText(), Toast.LENGTH_LONG).show();
+//        TextView myText = (TextView) view.findViewById();
+//        Toast.makeText(this, "You Selected "+ myText.getText(), Toast.LENGTH_LONG).show();
     }
 
     @Override

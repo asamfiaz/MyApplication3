@@ -3,10 +3,28 @@
 
 
     <string-array name="Events">
-        <item>Start</item>
-        <item>Intermediate</item>
-        <item>End</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
+
+    <string-array name="titles">
+        <item>Events</item>
+        <item>Relationships</item>
+
+    </string-array>
+
+    <array name="icons">
+        <item>@drawable/start_event</item>
+        <item>@drawable/intermediate_event</item>
+        <item>@drawable/end_event</item>
+
+    </array>
+
+    <string name="text_expand_me">Slide Up/Down</string>
+    <string name="text_collapse_me">Slide down to hide</string>
+
+
 
 
 </resources>
