@@ -91,6 +91,75 @@ public class ConnectingObjects extends AppCompatActivity {
             }
         });
 
+        LinearLayout endButton = (LinearLayout) findViewById(R.id.endEventButton);
+        endButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.end_event);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout taskButton = (LinearLayout) findViewById(R.id.taskButton);
+        taskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.task_activity);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout subProcessButton = (LinearLayout) findViewById(R.id.subProcessButton);
+        subProcessButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.subprocess);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout transactionButton = (LinearLayout) findViewById(R.id.transactionButton);
+        transactionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.transaction);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout callActivityButton = (LinearLayout) findViewById(R.id.callActivityButton);
+        callActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.call_activity);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
 //        img = (ImageView) rootLayout.findViewById(R.id.startEvent);
 //        textView3 = (TextView) findViewById(R.id.textView3);
 //        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150, 150);

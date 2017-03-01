@@ -40,51 +40,18 @@
             tools:ignore="contentDescription" />
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Start Event"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="5dp"-->
+            <!--android:text="Start Event"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="#FFFFFF" />-->
 
 
     </LinearLayout>
 
-
-    <LinearLayout
-        android:id="@+id/intermediateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/startEventButton"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp">
-
-        <ImageView
-            android:id="@+id/intermediateImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/intermediate_event"
-            tools:ignore="contentDescription" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Intermediate"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/sequenceFlowButton"
@@ -108,16 +75,174 @@
             tools:ignore="contentDescription" />
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Seq Flow"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="5dp"-->
+            <!--android:text="Seq Flow"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="#FFFFFF" />-->
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/endEventButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_button"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp"
+
+        android:layout_below="@+id/intermediateButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp">
+
+        <ImageView
+            android:id="@+id/endEventImg"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bottomSheetHeading"
+            app:srcCompat="@drawable/end_event"
+            tools:ignore="contentDescription" />
+
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="5dp"-->
+            <!--android:text="End "-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="#FFFFFF" />-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/intermediateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/action_button"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_below="@+id/startEventButton"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/intermediateImg"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bottomSheetHeading"
+            app:srcCompat="@drawable/intermediate_event"
+            tools:ignore="contentDescription" />
+
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="5dp"-->
+            <!--android:text="Intermediate"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="#FFFFFF" />-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/taskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_button"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignTop="@+id/sequenceFlowButton"
+        android:layout_toEndOf="@+id/sequenceFlowButton">
+
+        <ImageView
+            android:id="@+id/taskActivityImg"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bottomSheetHeading"
+            app:srcCompat="@drawable/task_activity"
+            tools:ignore="contentDescription" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/subProcessButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_button"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_alignTop="@+id/intermediateButton"
+        android:layout_alignStart="@+id/taskButton">
+
+        <ImageView
+            android:id="@+id/subProcessImg"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bottomSheetHeading"
+            app:srcCompat="@drawable/subprocess"
+            tools:ignore="contentDescription" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/transactionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_button"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_alignTop="@+id/endEventButton"
+        android:layout_alignStart="@+id/subProcessButton">
+
+        <ImageView
+            android:id="@+id/transactionButtonImg"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bottomSheetHeading"
+            app:srcCompat="@drawable/transaction"
+            tools:ignore="contentDescription" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/callActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_button"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_below="@+id/transactionButton"
+        android:layout_alignStart="@+id/transactionButton"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/callActivityImg"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bottomSheetHeading"
+            app:srcCompat="@drawable/call_activity"
+            tools:ignore="contentDescription" />
+    </LinearLayout>
+
+
 
 
 </RelativeLayout>
