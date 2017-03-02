@@ -8,20 +8,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 
 public class ConnectingObjects extends AppCompatActivity {
 
-//    private ImageView img;
+    private ImageView img;
 //    private ImageView img2;
+
+//    private ScaleGestureDetector scaleGestureDetector;
 
     private ViewGroup rootLayout;
     private int _xDelta;
@@ -30,16 +36,60 @@ public class ConnectingObjects extends AppCompatActivity {
     private TextView textView3;
     private RelativeLayout relativeLayout;
 
+//    private class MySimpleOnScaleGestureListener extends ScaleGestureDetector.SimpleOnScaleGestureListener{
+//        ImageView viewMyImage;
+//
+//        float factor;
+//
+//        public MySimpleOnScaleGestureListener(ImageView iv) {
+//            super();
+//            viewMyImage = iv;
+//        }
+//
+//        @Override
+//        public boolean onScaleBegin(ScaleGestureDetector detector) {
+//            factor = 1.0f;
+//            return true;
+//            //return super.onScaleBegin(detector);
+//        }
+//
+//        @Override
+//        public boolean onScale(ScaleGestureDetector detector) {
+//
+//            float scaleFactor = detector.getScaleFactor() - 1;
+//            factor += scaleFactor;
+//            viewMyImage.setScaleX(factor);
+//            viewMyImage.setScaleY(factor);
+//            return true;
+//            //return super.onScale(detector);
+//        }
+//    }
+//
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        scaleGestureDetector.onTouchEvent(event);
+//        return true;
+//        //return super.onTouchEvent(event);
+//    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.objects_connecting);
         rootLayout = (ViewGroup) findViewById(R.id.view_root);
+        img = (ImageView) rootLayout.findViewById(R.id.startEvent);
 
         relativeLayout = (RelativeLayout)findViewById(R.id.connectingObjectLayout);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-//
+
+//        scaleGestureDetector = new ScaleGestureDetector(
+//                this, new MySimpleOnScaleGestureListener(img));
+
+
 //        Button advanceToDropDown = (Button) findViewById(R.id.BackButtonConnecting);
 //        advanceToDropDown.setOnClickListener(new View.OnClickListener() {
 //
@@ -160,9 +210,115 @@ public class ConnectingObjects extends AppCompatActivity {
 
             }
         });
-//        img = (ImageView) rootLayout.findViewById(R.id.startEvent);
+
+        LinearLayout gatewayNoneButton = (LinearLayout) findViewById(R.id.gatewayNoneButton);
+        gatewayNoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.gateway_none);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout gatewayParallelButton = (LinearLayout) findViewById(R.id.gatewayParallelButton);
+        gatewayParallelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.gateway_parallel);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout gatewayXorButton = (LinearLayout) findViewById(R.id.gatewayXorButton);
+        gatewayXorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.gateway_xor);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout gatewayEventBasedButton = (LinearLayout) findViewById(R.id.gatewayEventBasedButton);
+        gatewayEventBasedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.gateway_eventbased);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout gatewayComplexButton = (LinearLayout) findViewById(R.id.gatewayComplexButton);
+        gatewayComplexButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.gateway_complex);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout gatewayOrButton = (LinearLayout) findViewById(R.id.gatewayOrButton);
+        gatewayOrButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.gateway_or);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+
+
+
+
+        // TEXTFIELDS
+        LinearLayout addTextButton = (LinearLayout) findViewById(R.id.addTextButton);
+        addTextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText editTxt = (EditText) findViewById(R.id.txtView);
+                TextView i = new TextView(ConnectingObjects.this);
+                i.setText(editTxt.getText());
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+
+
+
 //        textView3 = (TextView) findViewById(R.id.textView3);
-//        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150, 150);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150, 150);
 //        img.setLayoutParams(layoutParams);
 //        img.setOnTouchListener(new ChoiceTouchListener());
 //
@@ -173,8 +329,10 @@ public class ConnectingObjects extends AppCompatActivity {
 //        img2.setOnTouchListener(new ChoiceTouchListener());
     } // onCreate
 
+
+    // Delaroy Studios, Youtube
     public final class ChoiceTouchListener implements View.OnTouchListener {
-        TextView textView3 = (TextView) findViewById(R.id.textView3);
+//        TextView textView3 = (TextView) findViewById(R.id.textView3);
         public boolean onTouch(View view, MotionEvent event) {
             final int X = (int) event.getRawX();
             final int Y = (int) event.getRawY();
@@ -201,7 +359,7 @@ public class ConnectingObjects extends AppCompatActivity {
                     break;
             }
             Log.d("Loc","X: " + X+ " Y: " + Y);
-            textView3.setText("X: " + X + " Y: " + Y);
+//            textView3.setText("X: " + X + " Y: " + Y);
             rootLayout.invalidate();
             return true;
         }
