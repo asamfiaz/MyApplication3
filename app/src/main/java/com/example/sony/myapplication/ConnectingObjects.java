@@ -1,9 +1,13 @@
 package com.example.sony.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -99,6 +103,38 @@ public class ConnectingObjects extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
+
+        // Let 'tips' button open the tips dialogue
+        Button loadTipsDialogue = (Button) findViewById(R.id.tipsDialogue);
+        loadTipsDialogue.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ConnectingObjects.this);
+                dialog.setCancelable(false);
+                dialog.setTitle("Tips");
+                dialog.setMessage("Tip 1: For description, click on flashing text-field, press done, press 'T' " +
+                        "Tip 2: A BPM must begin with a start EVENT and end with an end event");
+
+
+                dialog.setNeutralButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+                final AlertDialog alert = dialog.create();
+                alert.show();
+            }
+        }); //Tips onClick
+
+
+
+
+
+
+
+
+
         LinearLayout startEventButton = (LinearLayout) findViewById(R.id.startEventButton);
         startEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,19 +149,7 @@ public class ConnectingObjects extends AppCompatActivity {
             }
         });
 
-        LinearLayout seqFlowButton = (LinearLayout) findViewById(R.id.sequenceFlowButton);
-        seqFlowButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                textView3 = (TextView) findViewById(R.id.textView3);
-                ImageView i = new ImageView(ConnectingObjects.this);
-                i.setImageResource(R.drawable.sequenceflow);
-                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
-                i.setOnTouchListener(new ChoiceTouchListener());
-                relativeLayout.addView(i);
 
-            }
-        });
 
         LinearLayout intermediateButton = (LinearLayout) findViewById(R.id.intermediateButton);
         intermediateButton.setOnClickListener(new View.OnClickListener() {
@@ -295,6 +319,76 @@ public class ConnectingObjects extends AppCompatActivity {
             }
         });
 
+        LinearLayout rightButton = (LinearLayout) findViewById(R.id.rightButton);
+        rightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+//                i.setImageResource(R.drawable.right);
+                Bitmap bmp;
+                bmp = BitmapFactory.decodeResource(getResources(),R.drawable.right);
+                bmp=Bitmap.createScaledBitmap(bmp,1000,312,true);
+                i.setImageBitmap(bmp);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(800,100));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout leftButton = (LinearLayout) findViewById(R.id.leftButton);
+        leftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                Bitmap bmp;
+                bmp = BitmapFactory.decodeResource(getResources(),R.drawable.left);
+                bmp=Bitmap.createScaledBitmap(bmp,1000,312,true);
+                i.setImageBitmap(bmp);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(800,100));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+
+        LinearLayout upButton = (LinearLayout) findViewById(R.id.upButton);
+        upButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                Bitmap bmp;
+                bmp = BitmapFactory.decodeResource(getResources(),R.drawable.up);
+                bmp=Bitmap.createScaledBitmap(bmp,252,800,true);
+                i.setImageBitmap(bmp);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(80,800));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout upRightButton = (LinearLayout) findViewById(R.id.upRightButton);
+        upRightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                Bitmap bmp;
+                bmp = BitmapFactory.decodeResource(getResources(),R.drawable.up_right);
+                bmp=Bitmap.createScaledBitmap(bmp,1000,1000,true);
+                i.setImageBitmap(bmp);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(300,300));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
 
 
 
@@ -310,6 +404,7 @@ public class ConnectingObjects extends AppCompatActivity {
                 i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
                 i.setOnTouchListener(new ChoiceTouchListener());
                 relativeLayout.addView(i);
+                editTxt.setText("");
 
             }
         });

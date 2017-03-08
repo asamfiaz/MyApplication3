@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
 
-
     <string-array name="Events">
         <item>1</item>
         <item>2</item>
@@ -11,18 +10,24 @@
     <string-array name="titles">
         <item>Events</item>
         <item>Relationships</item>
-
     </string-array>
 
     <array name="icons">
         <item>@drawable/start_event</item>
         <item>@drawable/intermediate_event</item>
         <item>@drawable/end_event</item>
-
     </array>
 
     <string name="text_expand_me">Slide Up/Down</string>
     <string name="text_collapse_me">Slide down to hide</string>
+
+    <string name="column1">Events</string>
+    <string name="column2">Relationships</string>
+    <string name="column3">Activities</string>
+    <string name="column4">Gateway</string>
+    <string name="column5">Both columns</string>
+
+
 
 
 

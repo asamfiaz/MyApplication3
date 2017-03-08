@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-            <activity android:name=".LoginActivity" >
+            <activity android:name=".LoginActivity"
+                android:windowSoftInputMode="stateHidden"
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +21,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".ConnectingObjects" >
-            android:screenOrientation="landscape"/>
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".RegisterActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ConnectingObjects"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="landscape">
+
         </activity>
 
     </application>

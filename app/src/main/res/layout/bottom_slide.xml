@@ -5,42 +5,54 @@
     android:id="@+id/bottomSheetLayout"
     android:layout_width="match_parent"
     android:layout_height="300dp"
-    android:background="@android:color/holo_blue_dark"
+    android:background="@android:color/darker_gray"
     android:padding="@dimen/activity_vertical_margin"
     app:behavior_hideable="false"
     app:behavior_peekHeight="60dp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
+    <!-- Bottom Slide Header -->
     <TextView
         android:id="@+id/bottomSheetHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:paddingBottom="5dp"
         android:text="@string/text_expand_me" />
 
+    <!-- Column 1 -->
     <LinearLayout
-        android:id="@+id/startEventButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/bottomSheetHeading"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:id="@+id/column1"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottomSheetHeading"
+        android:orientation="vertical"
+        android:layout_width="48dp">
 
-        <ImageView
-            android:id="@+id/startEvent"
+        <TextView
+            android:id="@+id/column1Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/column1" />
+
+        <LinearLayout
+            android:id="@+id/startEventButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:paddingBottom="5dp">
 
-            app:srcCompat="?android:attr/listChoiceIndicatorSingle"
-            tools:ignore="contentDescription" />
+            <ImageView
+                android:id="@+id/startEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="?android:attr/listChoiceIndicatorSingle"
+                tools:ignore="contentDescription" />
 
 
-        <!--<TextView-->
+            <!--<TextView-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:gravity="center"-->
@@ -48,102 +60,29 @@
             <!--android:text="Start Event"-->
             <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
             <!--android:textColor="#FFFFFF" />-->
+        </LinearLayout>
 
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/intermediateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/intermediateImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/intermediate_event"
+                tools:ignore="contentDescription" />
 
 
-    <LinearLayout
-        android:id="@+id/sequenceFlowButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_above="@+id/intermediateButton"
-        android:layout_toEndOf="@+id/intermediateButton"
-        android:layout_marginStart="12dp">
-
-        <ImageView
-            android:id="@+id/sequenceFlowImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/sequenceflow"
-            tools:ignore="contentDescription" />
-
-
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:gravity="center"-->
-            <!--android:padding="5dp"-->
-            <!--android:text="Seq Flow"-->
-            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-            <!--android:textColor="#FFFFFF" />-->
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/endEventButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-
-        android:layout_below="@+id/intermediateButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="14dp">
-
-        <ImageView
-            android:id="@+id/endEventImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/end_event"
-            tools:ignore="contentDescription" />
-
-
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:gravity="center"-->
-            <!--android:padding="5dp"-->
-            <!--android:text="End "-->
-            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-            <!--android:textColor="#FFFFFF" />-->
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/intermediateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_below="@+id/startEventButton"
-        android:layout_alignParentStart="true">
-
-        <ImageView
-            android:id="@+id/intermediateImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/intermediate_event"
-            tools:ignore="contentDescription" />
-
-
-        <!--<TextView-->
+            <!--<TextView-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:gravity="center"-->
@@ -152,249 +91,446 @@
             <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
             <!--android:textColor="#FFFFFF" />-->
 
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/endEventButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/endEventImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/end_event"
+                tools:ignore="contentDescription" />
+
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="5dp"-->
+            <!--android:text="End "-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="#FFFFFF" />-->
+
+        </LinearLayout>
+
     </LinearLayout>
 
+    <!-- Column 2 -->
     <LinearLayout
-        android:id="@+id/taskButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginStart="12dp"
-        android:layout_alignTop="@+id/sequenceFlowButton"
-        android:layout_toEndOf="@+id/sequenceFlowButton">
+        android:id="@+id/column2"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottomSheetHeading"
+        android:layout_toEndOf="@id/column1"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="108dp">
 
-        <ImageView
-            android:id="@+id/taskActivityImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/task_activity"
-            tools:ignore="contentDescription" />
+        <TextView
+            android:id="@+id/column2Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/column2" />
+
+        <LinearLayout
+            android:id="@+id/rightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/rightImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/right"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/leftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/leftButtonImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/left"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/upButtonImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/up"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upRightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/upRightImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/up_right"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
 
 
     </LinearLayout>
 
+    <!-- Column 3 -->
     <LinearLayout
-        android:id="@+id/subProcessButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_alignTop="@+id/intermediateButton"
-        android:layout_alignStart="@+id/taskButton">
+        android:id="@+id/column3"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottomSheetHeading"
+        android:layout_toEndOf="@+id/column2"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
-        <ImageView
-            android:id="@+id/subProcessImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/subprocess"
-            tools:ignore="contentDescription" />
+        <TextView
+            android:id="@+id/column3Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/column3" />
+
+        <LinearLayout
+            android:id="@+id/taskButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/taskActivityImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/task_activity"
+                tools:ignore="contentDescription" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subProcessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/subProcessImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/subprocess"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/transactionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/transactionButtonImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/transaction"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/callActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/callActivityImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/call_activity"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
+    <!-- Column 4 -->
     <LinearLayout
-        android:id="@+id/transactionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_alignTop="@+id/endEventButton"
-        android:layout_alignStart="@+id/subProcessButton">
+        android:id="@+id/column4"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottomSheetHeading"
+        android:layout_toEndOf="@+id/column3"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
 
-        <ImageView
-            android:id="@+id/transactionButtonImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/transaction"
-            tools:ignore="contentDescription" />
+        android:paddingRight="10dp"
+        android:layout_width="80dp">
+
+        <TextView
+            android:id="@+id/column4Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/column4" />
+
+        <LinearLayout
+            android:id="@+id/gatewayNoneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/gatewayNoneImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/gateway_none"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/gatewayParallelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/gatewayParallelImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/gateway_parallel"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gatewayXorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/gatewayXorImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/gateway_xor"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gatewayEventBasedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/gatewayEventBasedImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/gateway_eventbased"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gatewayOrButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/gatewayOrImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/gateway_or"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+
+
     </LinearLayout>
 
+    <!-- Column 5 -->
     <LinearLayout
-        android:id="@+id/callActivityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_below="@+id/transactionButton"
-        android:layout_alignStart="@+id/transactionButton"
-        android:layout_marginTop="12dp">
+        android:id="@+id/column5"
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bottomSheetHeading"
+        android:layout_toEndOf="@+id/column4"
+        android:paddingBottom="5dp">
+        <TextView
+            android:id="@+id/column5Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/column5" />
 
-        <ImageView
-            android:id="@+id/callActivityImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/call_activity"
-            tools:ignore="contentDescription" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/gatewayNoneButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginStart="16dp"
-        android:layout_alignTop="@+id/taskButton"
-        android:layout_toEndOf="@+id/taskButton">
+        <LinearLayout
+            android:id="@+id/gatewayComplexButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:orientation="horizontal"
+            android:padding="5dp"
 
-        <ImageView
-            android:id="@+id/gatewayNoneImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/gateway_none"
-            tools:ignore="contentDescription" />
-    </LinearLayout>
+            >
 
-    <LinearLayout
-        android:id="@+id/gatewayParallelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_alignTop="@+id/subProcessButton"
-        android:layout_alignStart="@+id/gatewayNoneButton">
+            <ImageView
+                android:id="@+id/gatewayComplexImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/gateway_complex"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
 
-        <ImageView
-            android:id="@+id/gatewayParallelImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/gateway_parallel"
-            tools:ignore="contentDescription" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/gatewayXorButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_alignTop="@+id/transactionButton"
-        android:layout_alignStart="@+id/gatewayParallelButton">
-
-        <ImageView
-            android:id="@+id/gatewayXorImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/gateway_xor"
-            tools:ignore="contentDescription" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/gatewayEventBasedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_alignTop="@+id/callActivityButton"
-        android:layout_alignStart="@+id/gatewayXorButton">
-
-        <ImageView
-            android:id="@+id/gatewayEventBasedImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/gateway_eventbased"
-            tools:ignore="contentDescription" />
     </LinearLayout>
 
 
+
+
+
+
+
+
+
+
+
+    <!-- TEXT INSERT BUTTON -->
+
     <LinearLayout
-        android:id="@+id/addTextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_alignTop="@+id/gatewayNoneButton"
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bottomSheetHeading"
         android:layout_alignParentEnd="true">
 
-        <ImageView
-            android:id="@+id/addTextImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/text_view"
-            tools:ignore="contentDescription" />
+        <LinearLayout
+            android:id="@+id/addTextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        <EditText
-            android:id="@+id/txtView"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
-    <LinearLayout
-        android:id="@+id/gatewayComplexButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginStart="11dp"
-        android:layout_alignTop="@+id/gatewayNoneButton"
-        android:layout_toEndOf="@+id/gatewayNoneButton">
+            <ImageView
+                android:id="@+id/addTextImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
 
-        <ImageView
-            android:id="@+id/gatewayComplexImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/gateway_complex"
-            tools:ignore="contentDescription" />
-    </LinearLayout>
+                app:srcCompat="@drawable/text_view"
+                tools:ignore="contentDescription" />
 
-    <LinearLayout
-        android:id="@+id/gatewayOrButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_button"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_alignTop="@+id/gatewayParallelButton"
-        android:layout_alignStart="@+id/gatewayComplexButton">
+            <EditText
+                android:id="@+id/txtView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="textWebEditText"
+                android:labelFor="@+id/addTextButton"/>
+        </LinearLayout>
 
-        <ImageView
-            android:id="@+id/gatewayOrImg"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bottomSheetHeading"
-            app:srcCompat="@drawable/gateway_or"
-            tools:ignore="contentDescription" />
+
+        <!--Tips Field-->
+        <LinearLayout
+            android:id="@+id/tipsField"
+            android:layout_width="43dp"
+            android:layout_height="60dp"
+
+            android:layout_marginTop="5dp"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <Button
+                android:id="@+id/tipsDialogue"
+                android:layout_width="29dp"
+                android:layout_height="38dp"
+
+
+                android:background="@drawable/tips"
+                />
+        </LinearLayout>
+
+
+
+
     </LinearLayout>
 
 
