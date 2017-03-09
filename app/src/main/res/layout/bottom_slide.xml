@@ -18,22 +18,24 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal"
-        android:paddingBottom="5dp"
-        android:text="@string/text_expand_me" />
+        android:paddingBottom="10dp"
+        android:text="@string/text_expand_me"
+        android:textStyle="normal|bold" />
 
     <!-- Column 1 -->
+    <TextView
+        android:id="@+id/column1Title"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="@string/column1" />
+
     <LinearLayout
         android:id="@+id/column1"
         android:layout_height="match_parent"
         android:layout_below="@id/bottomSheetHeading"
         android:orientation="vertical"
-        android:layout_width="48dp">
-
-        <TextView
-            android:id="@+id/column1Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/column1" />
+        android:layout_width="60dp"
+        android:layout_alignEnd="@+id/column1Title">
 
         <LinearLayout
             android:id="@+id/startEventButton"
@@ -128,210 +130,99 @@
     </LinearLayout>
 
     <!-- Column 2 -->
-    <LinearLayout
-        android:id="@+id/column2"
-        android:layout_height="match_parent"
-        android:layout_below="@id/bottomSheetHeading"
-        android:layout_toEndOf="@id/column1"
-        android:orientation="vertical"
-        android:paddingBottom="5dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_width="108dp">
-
-        <TextView
-            android:id="@+id/column2Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/column2" />
-
-        <LinearLayout
-            android:id="@+id/rightButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/action_button"
-            android:gravity="center_vertical"
-            android:padding="5dp">
-
-            <ImageView
-                android:id="@+id/rightImg"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                app:srcCompat="@drawable/right"
-                tools:ignore="contentDescription" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/leftButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/action_button"
-            android:gravity="center_vertical"
-            android:padding="5dp">
-
-
-            <ImageView
-                android:id="@+id/leftButtonImg"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                app:srcCompat="@drawable/left"
-                tools:ignore="contentDescription" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/upButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/action_button"
-            android:gravity="center_vertical"
-            android:padding="5dp">
-
-
-            <ImageView
-                android:id="@+id/upButtonImg"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                app:srcCompat="@drawable/up"
-                tools:ignore="contentDescription" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/upRightButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/action_button"
-            android:gravity="center_vertical"
-            android:padding="5dp">
-
-
-            <ImageView
-                android:id="@+id/upRightImg"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                app:srcCompat="@drawable/up_right"
-                tools:ignore="contentDescription" />
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
 
     <!-- Column 3 -->
+
+
+    <!-- Col 4-->
+
+
+    <!-- Column 5 -->
+
+    <!-- Column 6 -->
+
+
+    <!-- TEXT INSERT BUTTON -->
+
     <LinearLayout
-        android:id="@+id/column3"
+        android:orientation="vertical"
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:layout_below="@id/bottomSheetHeading"
-        android:layout_toEndOf="@+id/column2"
-        android:orientation="vertical"
-        android:paddingBottom="5dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:id="@+id/column3Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/column3" />
+        android:layout_below="@+id/bottomSheetHeading"
+        android:layout_alignParentEnd="true">
 
         <LinearLayout
-            android:id="@+id/taskButton"
+            android:id="@+id/addTextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:background="@drawable/action_button"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="5dp">
 
             <ImageView
-                android:id="@+id/taskActivityImg"
+                android:id="@+id/addTextImg"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
 
-                app:srcCompat="@drawable/task_activity"
+                app:srcCompat="@drawable/text_view"
                 tools:ignore="contentDescription" />
 
-
+            <EditText
+                android:id="@+id/txtView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="textWebEditText"
+                android:labelFor="@+id/addTextButton"/>
         </LinearLayout>
 
+
+        <!--Tips Field-->
         <LinearLayout
-            android:id="@+id/subProcessButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tipsField"
+            android:layout_width="43dp"
+            android:layout_height="60dp"
+
+            android:layout_marginTop="5dp"
             android:background="@drawable/action_button"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <ImageView
-                android:id="@+id/subProcessImg"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
 
-                app:srcCompat="@drawable/subprocess"
-                tools:ignore="contentDescription" />
+            <Button
+                android:id="@+id/tipsDialogue"
+                android:layout_width="29dp"
+                android:layout_height="38dp"
+
+
+                android:background="@drawable/tips"
+                />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/transactionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/action_button"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="5dp">
 
-            <ImageView
-                android:id="@+id/transactionButtonImg"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-
-                app:srcCompat="@drawable/transaction"
-                tools:ignore="contentDescription" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/callActivityButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/action_button"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
-            <ImageView
-                android:id="@+id/callActivityImg"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-
-                app:srcCompat="@drawable/call_activity"
-                tools:ignore="contentDescription" />
-        </LinearLayout>
 
 
     </LinearLayout>
 
-    <!-- Column 4 -->
     <LinearLayout
-        android:id="@+id/column4"
+        android:id="@+id/column5"
         android:layout_height="match_parent"
-        android:layout_below="@id/bottomSheetHeading"
-        android:layout_toEndOf="@+id/column3"
         android:orientation="vertical"
         android:paddingLeft="10dp"
 
         android:paddingRight="10dp"
-        android:layout_width="80dp">
+        android:layout_width="110dp"
+        android:layout_marginStart="142dp"
+        android:layout_below="@+id/column3Title"
+        android:layout_toEndOf="@+id/column4">
 
         <TextView
-            android:id="@+id/column4Title"
+            android:id="@+id/column5Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/column4" />
+            android:text="@string/column5" />
 
         <LinearLayout
             android:id="@+id/gatewayNoneButton"
@@ -423,20 +314,120 @@
 
     </LinearLayout>
 
-    <!-- Column 5 -->
+    <TextView
+        android:id="@+id/column3Title"
+        android:layout_height="wrap_content"
+        android:text="@string/column3"
+        android:layout_width="70dp"
+        android:layout_marginStart="78dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/column2Title" />
+
+    <TextView
+        android:id="@+id/column2Title"
+        android:layout_height="wrap_content"
+        android:text="@string/column2"
+        android:layout_width="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/column1Title"
+        android:layout_marginStart="12dp" />
+
     <LinearLayout
-        android:id="@+id/column5"
-        android:orientation="vertical"
-        android:layout_width="100dp"
+        android:id="@+id/column2"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="60dp"
         android:layout_below="@+id/bottomSheetHeading"
-        android:layout_toEndOf="@+id/column4"
-        android:paddingBottom="5dp">
-        <TextView
-            android:id="@+id/column5Title"
-            android:layout_width="match_parent"
+        android:layout_alignStart="@+id/column2Title">
+
+        <LinearLayout
+            android:id="@+id/rightButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/column5" />
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/rightImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/right"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/leftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/leftButtonImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/left"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/upButtonImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/up"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upRightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/upRightImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/up_right"
+                tools:ignore="contentDescription" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/column6"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp"
+        android:layout_marginStart="64dp"
+        android:layout_width="60dp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/bottomSheetHeading"
+        android:layout_alignStart="@+id/column5">
 
 
         <LinearLayout
@@ -459,73 +450,140 @@
 
     </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- TEXT INSERT BUTTON -->
-
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="100dp"
+        android:id="@+id/column3"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="60dp"
         android:layout_below="@+id/bottomSheetHeading"
-        android:layout_alignParentEnd="true">
+        android:layout_alignEnd="@+id/column3Title"
+        android:layout_marginEnd="21dp">
 
         <LinearLayout
-            android:id="@+id/addTextButton"
+            android:id="@+id/taskButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:background="@drawable/action_button"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="5dp">
 
             <ImageView
-                android:id="@+id/addTextImg"
+                android:id="@+id/taskActivityImg"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
 
-                app:srcCompat="@drawable/text_view"
+                app:srcCompat="@drawable/task_activity"
                 tools:ignore="contentDescription" />
 
-            <EditText
-                android:id="@+id/txtView"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:inputType="textWebEditText"
-                android:labelFor="@+id/addTextButton"/>
+
         </LinearLayout>
 
-
-        <!--Tips Field-->
         <LinearLayout
-            android:id="@+id/tipsField"
-            android:layout_width="43dp"
-            android:layout_height="60dp"
-
-            android:layout_marginTop="5dp"
+            android:id="@+id/subProcessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/action_button"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="5dp">
 
+            <ImageView
+                android:id="@+id/subProcessImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
 
-            <Button
-                android:id="@+id/tipsDialogue"
-                android:layout_width="29dp"
-                android:layout_height="38dp"
+                app:srcCompat="@drawable/subprocess"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/transactionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/transactionButtonImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/transaction"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/callActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/callActivityImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/call_activity"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/userActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/userActivityImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/user_activity"
+                tools:ignore="contentDescription" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/column4"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
 
 
-                android:background="@drawable/tips"
-                />
+
+        android:layout_width="60dp"
+        android:layout_below="@+id/bottomSheetHeading"
+        android:layout_alignStart="@+id/column3Title"
+        android:layout_marginStart="37dp">
+
+        <LinearLayout
+            android:id="@+id/serviceActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/serviceActivityImg"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                app:srcCompat="@drawable/service_activity"
+                tools:ignore="contentDescription" />
         </LinearLayout>
 
 

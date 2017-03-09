@@ -389,6 +389,42 @@ public class ConnectingObjects extends AppCompatActivity {
             }
         });
 
+        LinearLayout userActivityButton = (LinearLayout) findViewById(R.id.userActivityButton);
+        userActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.user_activity);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+        LinearLayout serviceActivityButton = (LinearLayout) findViewById(R.id.serviceActivityButton);
+        serviceActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                textView3 = (TextView) findViewById(R.id.textView3);
+                ImageView i = new ImageView(ConnectingObjects.this);
+                i.setImageResource(R.drawable.service_activity);
+                i.setLayoutParams(new RelativeLayout.LayoutParams(150,150));
+                i.setOnTouchListener(new ChoiceTouchListener());
+                relativeLayout.addView(i);
+
+            }
+        });
+
+
+
+
+
+
+
+
+
 
 
 

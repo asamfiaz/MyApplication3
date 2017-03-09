@@ -23,7 +23,8 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             app:srcCompat="?android:attr/listChoiceIndicatorSingle"
-            tools:ignore="contentDescription" />
+            tools:ignore="contentDescription"
+          />
 
         <!--<ImageView-->
             <!--android:id="@+id/startEvent"-->

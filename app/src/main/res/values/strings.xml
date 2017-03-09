@@ -24,12 +24,12 @@
     <string name="column1">Events</string>
     <string name="column2">Relationships</string>
     <string name="column3">Activities</string>
-    <string name="column4">Gateway</string>
-    <string name="column5">Both columns</string>
+    <string name="column4">Activities</string>
+    <string name="column5">Gateways</string>
 
 
 
-
+    <string name="textView5">Once you click on the begin page to start designing your BPM, </string>
 
 
 </resources>
